@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>H8 Model Deployment</title>
+</head>
+<body>
+
+    <div class="form">
+        <h1>Kmeans</h1>
+
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="blnc" placeholder="BALANCE" required="required" />
+            <input type="text" name="blncfrqncy" placeholder="BALANCE_FREQUENCY" required="required" />
+            <input type="text" name="prc" placeholder="PURCHASES" required="required" />
+            <input type="text" name="oneoff" placeholder="ONEOFF_PURCHASES" required="required" />
+            <input type="text" name="install" placeholder="INSTALLMENTS_PURCHASES" required="required" />
+            <input type="text" name="cash" placeholder="CASH_ADVANCE" required="required" />
+            <input type="text" name="prcfrq" placeholder="PURCHASES_FREQUENCY" required="required" />
+            <input type="text" name="oneoffprc" placeholder="ONEOFF_PURCHASES_FREQUENCY" required="required" />
+            <input type="text" name="prcisntall" placeholder="PURCHASES_INSTALLMENTS_FREQUENCY" required="required" />
+            <input type="text" name="cashadv" placeholder="CASH_ADVANCE_FREQUENCY" required="required" />
+            <input type="text" name="cashtrx" placeholder="CASH_ADVANCE_TRX" required="required" />
+            <input type="text" name="prctrx" placeholder="PURCHASES_TRX" required="required" />
+            <input type="text" name="credit" placeholder="CREDIT_LIMIT" required="required" />
+            <input type="text" name="paymnt" placeholder="PAYMENTS" required="required" />
+            <input type="text" name="minpayment" placeholder="MINIMUM_PAYMENTS" required="required" />
+            <input type="text" name="prcfull" placeholder="PRC_FULL_PAYMENT" required="required" />
+            <input type="text" name="tenure" placeholder="TENURE" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <p class="message">{{ prediction_text }}</p>
+    </div>
+
+</body>
+</html>
